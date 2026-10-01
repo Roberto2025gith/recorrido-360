@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recorrido 360 con Pannellum</title>
+    <!-- Estilos CSS oficiales de Pannellum -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.css"/>
+    <!-- Script principal de Pannellum -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.js"></script>
+    <style>
+        #panorama {
+            width: 100%;
+            height: 600px;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="panorama"></div>
+
+    <script>
+    pannellum.viewer('panorama', {
+        // Tipo de proyección de la imagen (equirectangular para fotos 360)
+        "type": "equirectangular",
+        // Ruta o URL de tu imagen panorámica unida
+        "panorama": "tu-imagen-360.jpg",
+        // Carga automática del panorama al abrir la página
+        "autoLoad": true,
+        // Configuración de los puntos interactivos (hotspots)
+        "hotSpots": [
+            {
+                "pitch": 5.2,   // Coordenada vertical en grados
+                "yaw": -30.5,   // Coordenada horizontal en grados
+                "type": "info", // Tipo de hotspot (informativo)
+                "text": "Elemento etiquetado: Descripción detallada del equipo o zona."
+            },
+            {
+                "pitch": -10.0,
+                "yaw": 90.0,
+                "type": "info",
+                "text": "Segundo punto de interés o componente del área."
+            }
+        ]
+    });
+    </script>
+
+</body>
+</html>
